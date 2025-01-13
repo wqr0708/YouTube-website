@@ -18,7 +18,11 @@
 </head>
 
 <body>
-    <div class="header">
+    <!-- semantic element = same as <div>(have meaning to screen readers)
+    <header></header>
+    <nav></nav> -->
+
+    <header class="header">
         <div class="left-section">
             <img class="hamburger-menu" src="icons/hamburger-menu.svg">
             <img class="youtube-logo" src="icons/youtube-logo.svg">
@@ -56,9 +60,9 @@
 
         </div>
 
-    </div>
+    </header>
 
-    <div class="sidebar">
+    <nav class="sidebar">
         <div class="sidebar-link">
             <img src="icons/home.svg">
             <div>Home</div>
@@ -83,9 +87,9 @@
             <img src="icons/library.svg">
             <div>Library</div>
         </div>
-    </div>
+    </nav>
 
-    <div class="video-grid">
+    <main class="video-grid">
         <div class="video-preview">
             <div class="thumbnail-row">
                 <a href="https://www.youtube.com/watch?v=n2RNcPRtAiY" target="_blank">
@@ -231,7 +235,7 @@
             </div>
         </div>
 
-        <div class="video-preview">
+        <section class="video-preview">
             <div class="thumbnail-row">
                 <a href="https://www.youtube.com/watch?v=yXWw0_UfSFg" target="_blank">
                     <img class="thumbnail" src="thumbnail/thumbnail-6.webp">
@@ -260,8 +264,8 @@
 
 
 
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 
 </html>
