@@ -1,0 +1,212 @@
+/* .search-bar {
+    font-size: 20px;
+    margin-left: 12px;
+    display: block;
+} */
+.header {
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: white;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(231, 231, 231);
+
+    z-index: 100;
+}
+
+.left-section {
+    /*background-color: lightblue;
+    width: 150px;*/
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-menu {
+    width: 24px;
+    margin-left: 24px;
+    margin-right: 20px;
+}
+
+.youtube-logo {
+    width: 90px;
+}
+
+.middle-section {
+    /* background-color: lightpink; */
+    flex: 1;
+    margin-left:70px;
+    margin-right: 30px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    flex: 1;
+    height: 36px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(192,192,192);
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.15);
+    width: 0;   /*=shrink*/
+}
+
+.search-bar::placeholder {
+    font-family: Roboto, Arial;
+    font-size: 16px
+}
+
+.search-button {
+    width: 60px;
+    height: 40px;
+    background-color: rgb(240,240,240);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: rgb(192,192,192);
+    margin-left: -1px;
+    margin-right: 10px;
+}
+
+
+/*这段只是改变了icon排列的方式，而设置为position:absolute的tooltip不会直接改变，而是参照点改变了导致整体也居中了
+如果没有 display: flex，.tooltip 的位置是相对于 .search-button 的左上角进行定位的。因为 .tooltip 使用了 position: absolute 和 top: 60px，所以它偏移的是 .search-button 的左上角位置。
+加上 display: flex 后居中的原因
+使用 display: flex 并居中对齐后，.search-button 内部的内容居中，Flexbox 布局会让 .search-icon 处于按钮的中心位置，因此 .tooltip 的默认位置也被调整到了按钮中心。 */
+
+/*
+只设置 display: flex 后（icon偏移的原因）：
+子元素会从左到右排列（沿主轴从左开始，不会居中）。
+在交叉轴（垂直方向）上，子元素会被拉伸，或者保持它们的默认位置（顶部对齐）。
+结果是：search-icon 会偏向按钮的左侧，并且垂直方向上可能出现一些偏移。
+*/
+
+.search-button,
+.voice-search-button,
+.upload-icon-container,
+.youtube-apps-icon-container,
+.notifications-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.search-button .tooltip,
+.voice-search-button .tooltip,
+.upload-icon-container .tooltip,
+.youtube-apps-icon-container .tooltip,
+.notifications-icon-container .tooltip {
+    font-family: roboto, Arial;
+    font-size: 12px;
+    background-color: rgb(93, 93, 93);
+    color:white;
+    opacity: 0;
+    position: absolute;
+    top: 48px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 2px;
+    transition: 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.youtube-apps-icon-container:hover .tooltip,
+.notifications-icon-container:hover .tooltip {
+    opacity: 96%;
+}
+
+.search-icon {
+    height: 25px;
+    
+}
+
+.voice-search-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(244, 242, 242);
+}
+
+.voice-search-icon {
+    height: 24px;
+    
+}
+
+.right-section {
+    /* background-color: lightblue; */
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    flex-shrink: 0; /*=don't shrink*/
+}
+
+
+.upload-icon {
+    height: 24px;
+
+}
+
+
+.youtube-apps-icon {
+    height: 24px;
+}
+
+.notifications-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.notifications-icon {
+    height: 24px;
+}
+
+.notifications-count {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    background-color: rgb(199, 2, 2);
+    color: white;
+    font-family: roboto, Arial;
+    font-size: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 10px;
+}
+
+
+.current-user-button {
+    border:none;
+    border-radius: 40px;
+}
+.current-user-icon {
+    height: 24px;
+    border-radius: 40px;
+}

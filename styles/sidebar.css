@@ -1,0 +1,44 @@
+.sidebar {
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 55px;
+
+    width: 70px;
+
+    z-index: 200;
+
+    padding-top: 4px;
+}
+
+.sidebar-link {
+    background-color: white;
+    height: 74px;
+    margin-bottom: 1px;
+
+    display: flex;
+    /* Arrange items in a column, center them horizontally and vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(231, 229, 229);
+}
+
+/* display: 布局，几个元素相关关系
+position: 精确定位每个元素位置 */
+
+.sidebar-link img {
+    height: 26px;
+    margin-bottom: 4px;
+}
+
+.sidebar-link div {
+    font-family: roboto, Arial;
+    font-size: 10px;
+}

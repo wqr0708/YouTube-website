@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Position Practice</title>
+    </head>
+    <body style="
+        height: 3000px;
+        padding-top: 60px;
+        padding-left: 80px
+    ">
+        <div style="
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            height: 50px;
+
+            z-index: 100; /* default is zero*/
+        ">header</div>
+
+        <div style="
+            background-color: green;
+            color: white;
+            position:fixed;
+            top: 50px;
+            bottom: 0;
+            left: 0;
+            /*right: 650px;*/
+            width: 72px;
+        ;">
+            sidbar
+            <!-- whenever a position absolute is inside a position fixed, it's gonna be placed relative to this position fixed element.
+            -->
+            <div style="
+                background-color: red;
+                color: rebeccapurple;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            ">
+                X
+            </div>
+        </div>
+
+        <!--
+        fixed = placed in the browser window
+        absolute = placed on the page
+
+        an element that is written below is going to appear in front of elements that are written above it.
+        -->
+
+        <div style="
+            background-color: red;
+            color: rebeccapurple;
+            position: absolute;
+            right: 10px;
+            top: 60px;
+        ">
+            absolute
+        </div>
+
+        <div style="
+            background-color: lightcoral;
+            color: rebeccapurple;
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        ">
+            fixed
+        </div>
+
+        <div style="
+            background-color: lightblue;
+            height: 200px;
+            width: 200px;
+            position: static;
+            /* margin-top: 60px; */
+        ">
+            div 1
+        </div>
+        
+
+        <!-- 外层的div使用了position: relative，这意味着它在正常文档流中占据空间，并且创建了一个新的定位上下文。
+        内层的div使用了position: absolute，这意味着它相对于最近的已定位祖先元素（即外层的div）进行定位。 -->
+        <div style="
+            background-color: lightpink;
+            height: 200px;
+            width: 200px;
+            position: relative;
+        ">
+            div 2
+            <div style="
+                background-color: black;
+                color: white;
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            ">
+                5:00
+            </div>
+        </div>
+        
+        
+
+    </body>
+</html>
